@@ -30,14 +30,15 @@ function init() {
 
       if (rand === $first) {
         rand = $second;
-        $('#second').addClass('flash');
+        $('#dosIcon').removeClass('hidden');
+        $('#unoIcon').addClass('hidden');
         $(this).addClass('flash');
-        // combo2.push($(this).data('val'));
+
         console.log(combo2);
       } else {
         rand = $first;
-        // alert('It is the player with ' + rand + ' turn');
-        $('#first').addClass('flash');
+        $('#unoIcon').removeClass('hidden');
+        $('#dosIcon').addClass('hidden');
         $(this).addClass('flash');
 
         // combo1.push($(this).data('val'));
@@ -54,6 +55,8 @@ function init() {
       || (($('#second').val() === $('#three').text()) && ($('#second').val() === $('#five').text()) && ($('#second').val() === $('#seven').text()))) {
         alert('player 2 wins!');
         $('.col-md-4').children().remove();
+        $('#first').val('');
+        $('#second').val('');
         $('.col-md-4').attr('disabled', true);
         count = 0;
       }
@@ -68,29 +71,37 @@ function init() {
       || (($('#first').val() === $('#three').text()) && ($('#first').val() === $('#five').text()) && ($('#first').val() === $('#seven').text()))) {
         alert('player 1 wins!');
         $('.col-md-4').children().remove();
+        $('#first').val('');
+        $('#second').val('');
         $('.col-md-4').attr('disabled', true);
         count = 0;
         return false;
       } else if (count === 9) {
         alert('Tie game try again!');
         $('.col-md-4').children().remove();
+        $('#first').val('');
+        $('#second').val('');
         $('.col-md-4').attr('disabled', true);
         count = 0;
         return false;
       } else if (count > 9) {
         alert('please')
         $('.col-md-4').children().remove();
+        $('#first').val('');
+        $('#second').val('');
         $('.col-md-4').attr('disabled', true);
         count = 0;
-        return false;
       }
     });
 
   });
   $('#reset').click(function() {
     $('.col-md-4').children().remove();
-    $('.col-md-4').attr('disabled', true);
-    count = 0;
+      $('#first').val('');
+      $('#second').val('');
+      $('.col-md-4').attr('disabled', true);
+      count = 0;
+
   })
 
 }
