@@ -2,9 +2,29 @@ doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
-    title Prototype
+    title Tic Tac Toe
     link(rel='stylesheet', href='/style.css')
   body
-    h1 Hello, World
+    h1 Tic Tac Toe
+    p Player 1
+    input#first(type='text' placeholder='first player')
+    p Player 2
+    input#second(type='text' placeholder='second player')
+    button#go Go!
+    .container
+      .row
+        #one.col-md-4(data-val='1') 
+        #two.col-md-4(data-val='2')
+        #three.col-md-4(data-val='3')
+      .row
+        #four.col-md-4(data-val='4')
+        #five.col-md-4(data-val='5')
+        #six.col-md-4(data-val='6')
+      .row
+        #seven.col-md-4(data-val='7')
+        #eight.col-md-4(data-val='8')
+        #nine.col-md-4(data-val='9')
+    button#reset Reset
     script(src='/vendor/jquery/dist/jquery.js')
+    //- script(src='/vendor/lodash/lodash.js')
     script(src='/main.js')
